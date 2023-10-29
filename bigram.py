@@ -43,7 +43,7 @@ def get_batch(split):
     x, y = x.to(device), y.to(device)
     return x, y
 
-@torch.no_grad()
+@torch.no_grad() # don't store intermediate variables to improve memory use
 def estimate_loss():
     out = {}
     model.eval()
